@@ -1,0 +1,17 @@
+overload:
+  enabled: true
+  package: yandextank.plugins.DataUploader
+  token_file: "token.txt"
+phantom:
+  enabled: false
+jmeter:
+  enabled: true
+  jmx: script.jmx
+  jmeter_path: /home/loadtest/apache-jmeter-5.5/bin/jmeter
+  buffered_seconds: 10
+  jmeter_ver: 5.5
+  ext_log: all
+autostop:
+  autostop:
+    - time(3s,10)
+    - http(5xx,20%,5s)
